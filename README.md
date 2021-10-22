@@ -1,6 +1,5 @@
 # Valida-o-Email-Cpf
-
-![sla](https://user-images.githubusercontent.com/60429513/138467407-a5352c3c-ac5d-4a6f-ae34-fafbcdffd7c8.gif)
+<img src="https://user-images.githubusercontent.com/60429513/138467407-a5352c3c-ac5d-4a6f-ae34-fafbcdffd7c8.gif" width="250" height="250"/>
 
 Projeto em flutter que Faz validação de Cpf e Email.
 
