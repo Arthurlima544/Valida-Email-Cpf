@@ -1,6 +1,6 @@
 # Valida-o-Email-Cpf
-<gif src="https://user-images.githubusercontent.com/60429513/138467407-a5352c3c-ac5d-4a6f-ae34-fafbcdffd7c8.gif" width="360" height="640"/>
-<a href="url"><img src="https://user-images.githubusercontent.com/60429513/138467407-a5352c3c-ac5d-4a6f-ae34-fafbcdffd7c8.gif" width="360" height="640" ></a>
+<img src="https://user-images.githubusercontent.com/60429513/138467407-a5352c3c-ac5d-4a6f-ae34-fafbcdffd7c8.gif" width="360" height="640"/>
+
 
 Projeto em flutter que Faz validação de Cpf e Email.
 
