@@ -1,16 +1,12 @@
-# validacao_email
+# Valida-o-Email-Cpf
 
-A new Flutter project.
+Projeto em flutter que Faz validação de Cpf e Email.
 
-## Getting Started
+Foi utilizado Gerenciamento de Estado Bloc 
+- [Bloc Lib](https://bloclibrary.dev/#/)
 
-This project is a starting point for a Flutter application.
+O Package Formz para simplificar a criação de um formulário.
+- [Formz](https://pub.dev/packages/formz)
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+E o Package Equatable para auxiliar na criação de testes na Lógica de negócios.
+- [Equatable](https://pub.dev/packages/equatable)
