@@ -4,6 +4,7 @@ import 'package:formz/formz.dart';
 import 'package:validacao_email/pages/homepage/bloc/homepage_bloc.dart';
 import 'package:validacao_email/pages/homepage/widgets/cpf_input.dart';
 import 'package:validacao_email/pages/homepage/widgets/email_input.dart';
+import 'package:validacao_email/pages/homepage/widgets/sexo_input.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -13,6 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   final _emailFocusNode = FocusNode();
   final _cpfFocusNode = FocusNode();
+  final usuarioFakeSexo = "F";
 
   @override
   void initState() {
@@ -41,7 +43,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Funcionaaaaaaa"),
+        title: Text("Home"),
       ),
       body: BlocListener<HomepageBloc, HomepageState>(
         listener: (context, state) {},
@@ -55,6 +57,9 @@ class _HomePageState extends State<HomePage> {
                 ),
                 CpfInput(
                   focusNode: _cpfFocusNode,
+                ),
+                SexoSwitch(
+                  userOption: usuarioFakeSexo,
                 ),
                 SubmitButton(),
               ],

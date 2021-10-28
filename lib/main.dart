@@ -10,7 +10,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
+  final usuario = "F";
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,8 +18,9 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      debugShowCheckedModeBanner: false,
       home: BlocProvider(
-        create: (context) => HomepageBloc(),
+        create: (context) => HomepageBloc()..add(InitialData(user: usuario)),
         child: HomePage(),
       ),
     );
