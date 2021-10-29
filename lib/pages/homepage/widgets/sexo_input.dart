@@ -16,29 +16,39 @@ class SexoSwitch extends StatelessWidget {
                 value: Genero.masculino,
                 groupValue: state.sexo.stringToEnum(),
                 onChanged: (value) {
-                  context.read<HomepageBloc>().add(SexoChanged(sexo: enumToString(value)));
+                  context
+                      .read<HomepageBloc>()
+                      .add(SexoChanged(sexo: enumToString(value)));
                 },
               ),
+              Text("Masculino"),
               Radio<Genero>(
                 value: Genero.feminino,
                 groupValue: state.sexo.stringToEnum(),
                 onChanged: (value) {
-                  context.read<HomepageBloc>().add(SexoChanged(sexo: enumToString(value)));
+                  context
+                      .read<HomepageBloc>()
+                      .add(SexoChanged(sexo: enumToString(value)));
                 },
               ),
+              Text("Feminino"),
               Radio<Genero>(
                 value: Genero.naobinario,
                 groupValue: state.sexo.stringToEnum(),
                 onChanged: (value) {
-                  context.read<HomepageBloc>().add(SexoChanged(sexo: enumToString(value)));
+                  context
+                      .read<HomepageBloc>()
+                      .add(SexoChanged(sexo: enumToString(value)));
                 },
               ),
+              Text("Não-Binário"),
             ],
           ),
         );
       },
     );
   }
+
   String enumToString(Genero? genero) {
     switch (genero) {
       case Genero.masculino:
