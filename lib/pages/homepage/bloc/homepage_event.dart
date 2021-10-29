@@ -38,3 +38,9 @@ class SexoChanged extends HomepageEvent {
 
   SexoChanged({required this.sexo});
 }
+
+class InitialDataLoad extends HomepageEvent {
+  final Usuario user;
+
+  InitialDataLoad({required this.user});
+}

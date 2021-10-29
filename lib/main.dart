@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:validacao_email/pages/auxpage/auxpage.dart';
 import 'package:validacao_email/pages/homepage/bloc/homepage_bloc.dart';
 
 import 'package:validacao_email/pages/homepage/homepage.dart';
@@ -18,10 +19,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: BlocProvider(
-        create: (context) => HomepageBloc(),
-        child: HomePage(),
-      ),
+      home: AuxPage(),
     );
   }
 }

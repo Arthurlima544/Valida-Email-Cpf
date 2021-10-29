@@ -6,6 +6,7 @@ import 'package:validacao_email/pages/homepage/bloc/homepage_bloc.dart';
 class SexoSwitch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String aux;
     return BlocBuilder<HomepageBloc, HomepageState>(
       builder: (context, state) {
         return Container(
@@ -15,21 +16,21 @@ class SexoSwitch extends StatelessWidget {
                 value: Genero.masculino,
                 groupValue: state.sexo.stringToEnum(),
                 onChanged: (value) {
-                  value = state.sexo.stringToEnum();
+                  context.read<HomepageBloc>().add(SexoChanged(sexo: enumToString(value)));
                 },
               ),
-              Radio(
+              Radio<Genero>(
                 value: Genero.feminino,
                 groupValue: state.sexo.stringToEnum(),
                 onChanged: (value) {
-                  value = state.sexo.stringToEnum();
+                  context.read<HomepageBloc>().add(SexoChanged(sexo: enumToString(value)));
                 },
               ),
               Radio<Genero>(
                 value: Genero.naobinario,
                 groupValue: state.sexo.stringToEnum(),
                 onChanged: (value) {
-                  value = state.sexo.stringToEnum();
+                  context.read<HomepageBloc>().add(SexoChanged(sexo: enumToString(value)));
                 },
               ),
             ],
@@ -37,5 +38,17 @@ class SexoSwitch extends StatelessWidget {
         );
       },
     );
+  }
+  String enumToString(Genero? genero) {
+    switch (genero) {
+      case Genero.masculino:
+        return "M";
+      case Genero.feminino:
+        return "F";
+      case Genero.naobinario:
+        return "N";
+      default:
+        return "";
+    }
   }
 }

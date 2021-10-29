@@ -6,6 +6,7 @@ import 'package:formz/formz.dart';
 import 'package:validacao_email/models/Cpf.dart';
 import 'package:validacao_email/models/Email.dart';
 import 'package:validacao_email/models/Sexo.dart';
+import 'package:validacao_email/models/Usuario.dart';
 import 'package:validacao_email/utils/validation_mixin.dart';
 
 part 'homepage_event.dart';
@@ -16,6 +17,18 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
 
   @override
   Stream<HomepageState> mapEventToState(HomepageEvent event) async* {
+    //* InitialData
+    if (event is InitialDataLoad) {
+      final email = Email.dirty(event.user.email);
+      final cpf = Cpf.dirty(event.user.cpf);
+      final sexo = Sexo.dirty(event.user.sexo);
+      yield state.copyWith(
+        email: email,
+        cpf: cpf,
+        sexo: sexo,
+        status: Formz.validate([email, cpf]),
+      );
+    }
     //* EMAIL
     if (event is EmailChanged) {
       final email = Email.dirty(event.email);
@@ -54,7 +67,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
         yield state.copyWith(status: FormzStatus.submissionSuccess);
       }
       print(
-          "Form Submited # email: ${email.value} cpf: ${email.value} sexo: ${state.sexo.value}");
+          "Form Submited # email: ${email.value} cpf: ${cpf.value} sexo: ${state.sexo.value}");
     }
     // Focus Node Desfocado:
     if (event is EmailUnfocused) {

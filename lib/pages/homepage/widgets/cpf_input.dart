@@ -3,15 +3,16 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:validacao_email/pages/homepage/bloc/homepage_bloc.dart';
 
 class CpfInput extends StatelessWidget {
-  const CpfInput({Key? key, required this.focusNode}) : super(key: key);
-
+  const CpfInput({Key? key, required this.focusNode, required this.initialCpf})
+      : super(key: key);
+  final String initialCpf;
   final FocusNode focusNode;
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomepageBloc, HomepageState>(
       builder: (context, state) {
         return TextFormField(
-          initialValue: state.cpf.value,
+          initialValue: initialCpf,
           focusNode: focusNode,
           decoration: InputDecoration(
             labelText: 'Cpf',

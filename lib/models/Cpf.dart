@@ -17,6 +17,7 @@ class Cpf extends FormzInput<String, CpfValidationError> {
   }
 
   String? stringToCpfFormat(String? value) {
+    //Todo fazer funcao;
     return value;
   }
 }
