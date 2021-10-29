@@ -33,12 +33,8 @@ class CpfUnfocused extends HomepageEvent {}
 
 class FormSubmitted extends HomepageEvent {}
 
-/* class CpfChanged extends HomepageEvent {
-  
-  final String cpf;
+class SexoChanged extends HomepageEvent {
+  final String sexo;
 
-  CpfChanged({
-    required this.cpf,
-    required this.params,
-  });
-} */
+  SexoChanged({required this.sexo});
+}

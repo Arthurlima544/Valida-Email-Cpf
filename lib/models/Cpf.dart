@@ -11,6 +11,12 @@ class Cpf extends FormzInput<String, CpfValidationError> {
 
   @override
   CpfValidationError? validator(String? value) {
-    return _cpfRegex.hasMatch(value ?? '') ? null : CpfValidationError.invalid;
+    return _cpfRegex.hasMatch(stringToCpfFormat(value) ?? '')
+        ? null
+        : CpfValidationError.invalid;
+  }
+
+  String? stringToCpfFormat(String? value) {
+    return value;
   }
 }
