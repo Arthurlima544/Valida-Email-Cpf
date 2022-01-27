@@ -1,6 +1,6 @@
 # Valida-o-Email-Cpf
 
-Projeto em flutter que Faz validação de Cpf e Email.
+App que Faz validação de Cpf e Email, com dados iniciais.
 
 Foi utilizado Gerenciamento de Estado Bloc 
 - [Bloc Lib](https://bloclibrary.dev/#/)
