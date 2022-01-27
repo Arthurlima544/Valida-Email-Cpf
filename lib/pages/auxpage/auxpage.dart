@@ -5,7 +5,7 @@ import 'package:validacao_email/pages/homepage/bloc/homepage_bloc.dart';
 import 'package:validacao_email/pages/homepage/homepage.dart';
 
 final Usuario user =
-    Usuario(email: "Arthur@gmail.com", sexo: "F", cpf: "05868048113");
+    Usuario(email: "Arthur@gmail.com", sexo: "F", cpf: "79788637868");
 
 class AuxPage extends StatelessWidget {
   @override
@@ -14,23 +14,29 @@ class AuxPage extends StatelessWidget {
       appBar: AppBar(
         title: Text("Auxpage"),
       ),
-      body: ListTile(
-        title: Text(
-          'Meus dados',
-          style: TextStyle(color: Colors.amber),
-        ),
-        onTap: () => {
-          Navigator.of(context).push(
-            MaterialPageRoute(
-              builder: (_) => BlocProvider(
-                create: (context) => HomepageBloc(),
-                child: HomePage(
-                  user: user,
-                ),
+      body: Container(
+        child: Center(
+          child: ListTile(
+            title: Center(
+              child: Text(
+                'Ir Para Página',
+                style: TextStyle(color: Colors.black),
               ),
             ),
+            onTap: () => {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => BlocProvider(
+                    create: (context) => HomepageBloc(),
+                    child: HomePage(
+                      user: user,
+                    ),
+                  ),
+                ),
+              ),
+            },
           ),
-        },
+        ),
       ),
     );
   }
